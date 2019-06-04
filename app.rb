@@ -6,4 +6,20 @@ class App < Sinatra::Base
     erb :newteam
   end
 
+  post '/team' do
+    @team_name = params["team_name"]
+    @coach = params["coach"]
+    @pg = params["pg"]
+    @sg = params["sg"]
+    @sf = params["sf"]
+    @pf = params["pf"]
+    @c = params["c"]
+
+    erb :team
+  end
+
+  get '/team' do
+    binding.pry
+  end
+
 end
